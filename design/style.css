@@ -1,0 +1,3 @@
+.navbar form {display: flex; justify-content: space-around;}
+.navbar form input, .navbar form button, .navbar small {margin-left: 2rem;}
+.navbar {padding: 2rem; }
