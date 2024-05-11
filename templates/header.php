@@ -1,6 +1,5 @@
 <?php 
 // DATABASE CONNECTION AND SECURING:
-require "includes/dbh.inc.php";
 require "includes/config_session.inc.php";
 ?>
 <!-- EXTERNAL STYLE LINKS: -->
