@@ -4,7 +4,7 @@
 <?php
 require "templates/header.php";
 
-require "login.php";
+
 
 ?>
 

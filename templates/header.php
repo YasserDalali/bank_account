@@ -10,11 +10,16 @@ require "includes/config_session.inc.php";
 
 <link rel="stylesheet" href="design/style.css">
 
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlabank</title>
+    <link rel="icon" href="https://seeklogo.com/images/E/emblem-of-yamamoto-miyagi-logo-3BB0AAE301-seeklogo.com.png" type="image/png">
+</head>
 
 <!-- HEADER: -->
 <?php 
-if (isset($_SESSION['userId'])) {
+if (isset($_SESSION['uidUsers'])) {
     echo '<nav class="navbar sticky-top navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="https://seeklogo.com/images/E/emblem-of-yamamoto-miyagi-logo-3BB0AAE301-seeklogo.com.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -32,7 +37,7 @@ else {
         Atlabank
       </a>
       <DIV>
-      <form class="form-inline" method="POST">
+      <form class="form-inline" method="POST" action="includes/login.inc.php">
         <input class="form-control mr-sm-2" type="text" 
             name="userID"
          placeholder="username/email" >
@@ -41,7 +46,7 @@ else {
         <input class="form-control mr-sm-2" type="password"
             name="userPwd"
         placeholder="password" >
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="login-submit">Login</button>
       
             
       </form>
