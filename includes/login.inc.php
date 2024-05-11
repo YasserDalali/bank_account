@@ -15,15 +15,15 @@ if (isset($_POST['login-submit'])) {
     $password = $_POST['userPwd'];
 
 
+
 // Prepare the SQL query
 $sql = "SELECT accId FROM account WHERE email = :email AND pwd = :password";
-// Hash user password
 
+// Hash user password
 $stmt = $pdo->prepare($sql);
-$HashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
 // Bind parameters
 $stmt->bindParam(':email', $usermail);
-$stmt->bindParam(':password', $HashedPassword);
+$stmt->bindParam(':password', $password);
 
 // Execute the statement
 $stmt->execute();
@@ -39,9 +39,13 @@ if ($stmt->rowCount() === 1) {
     $_SESSION['uidUsers'] = $row['accId'];
     
     
-    header("Location: ../index.php");
+    header("Location: ../main.php");
 
     $pdo = $stmt = null;
+}
+
+else {
+    header("Location: ../index.php");
 }
 
     

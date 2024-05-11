@@ -5,9 +5,12 @@
 require "templates/header.php";
 
 if (isset($_SESSION['uidUser'])) {
-    require('main.php')
+    require('main.php');
 }
 
+else {
+    require('landing.php');
+}
 ?>
 
 </html>
