@@ -25,7 +25,7 @@ if (isset($_SESSION['uidUsers'])) {
         <img src="https://seeklogo.com/images/E/emblem-of-yamamoto-miyagi-logo-3BB0AAE301-seeklogo.com.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Atlabank
       </a>
-      <form class="form-inline" method="POST">
+      <form class="form-inline" action="includes/logout.inc.php">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
       </form>
     </nav>';

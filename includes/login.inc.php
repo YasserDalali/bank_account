@@ -1,4 +1,5 @@
 <?php
+require_once "config_session.inc.php";
 require "dbh.inc.php";
 /* 
             <form action="includes/login.inc.php" method="post">
@@ -16,11 +17,13 @@ if (isset($_POST['login-submit'])) {
 
 // Prepare the SQL query
 $sql = "SELECT accId FROM account WHERE email = :email AND pwd = :password";
-$stmt = $pdo->prepare($sql);
+// Hash user password
 
+$stmt = $pdo->prepare($sql);
+$HashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
 // Bind parameters
 $stmt->bindParam(':email', $usermail);
-$stmt->bindParam(':password', $password);
+$stmt->bindParam(':password', $HashedPassword);
 
 // Execute the statement
 $stmt->execute();
@@ -37,6 +40,8 @@ if ($stmt->rowCount() === 1) {
     
     
     header("Location: ../index.php");
+
+    $pdo = $stmt = null;
 }
 
     

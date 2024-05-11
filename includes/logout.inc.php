@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     // Unset all of the session variables
     $_SESSION = array();
 
@@ -7,5 +7,6 @@
     session_destroy();
 
     // Redirect to the main.php page after logout
-    header("Location: index.php");
-    exit;
+    header("Location: ../index.php");
+
+    exit();
