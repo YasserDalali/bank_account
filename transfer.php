@@ -1,3 +1,8 @@
+<?php
+
+require 'includes/transfer.inc.php'
+
+?>
 
    <div class="form-group">
      <label for="">Account to send to</label>

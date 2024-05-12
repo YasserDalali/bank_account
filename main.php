@@ -28,6 +28,10 @@ include "templates/header.php"
     <header>
         <h1>Account Overview</h1>
     </header>
+
+    <?php /* var_dump($_SESSION) */ ?>
+
+
     <div class="container">
         <h2>Account Information</h2>
         <p><strong>Account Number:</strong> <?php echo $_SESSION['uidUsers']; ?></p>
@@ -54,7 +58,7 @@ include "templates/header.php"
             <!-- Add more transaction rows as needed -->
         </table>
 
-        <a href="includes/transfer.inc.php" class="btn btn-primary">Transfer Money</a>
+        <a href="transfer.php" class="btn btn-primary">Transfer Money</a>
 
     </div>
 
