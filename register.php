@@ -4,10 +4,10 @@ require "templates/header.php";
 
 
 
-    <form class="needs-validation" novalidate method="POST" action="includes/register.inc.php">
+    <form class="container needs-validation" novalidate method="POST" action="includes/register.inc.php">
 
 
-        <div class="form-row">
+        <div class="form-row my-4">
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip01">First name</label>
                 <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" required name="fname">
@@ -15,14 +15,14 @@ require "templates/header.php";
                     Looks good!
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3 my-4">
                 <label for="validationTooltip02">Last name</label>
                 <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" required name="lname">
                 <div class="valid-tooltip">
                     Looks good!
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3 my-4">
                 <label for="validationTooltipUsername">Email</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -36,7 +36,7 @@ require "templates/header.php";
             </div>
         </div>
 
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 my-4">
             <label for="validationTooltip05">Password</label>
             <input type="password" class="form-control" id="validationTooltip05" placeholder="Password" required name="pass">
             <div class="invalid-tooltip">
