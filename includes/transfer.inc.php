@@ -2,12 +2,12 @@
 
 require "dbh.inc.php";
 session_start();
-$accToSend = 5;
-$ammount = 100;
+$accToSend = 3;
+$ammount = 3000;
+$accountBalance = 0;
 
 $sql = "SELECT * FROM account WHERE accId='{$accToSend}'";
 $result = $pdo->query($sql);
-
 
 if ($result) {
     $accountBalance = $result->fetch(PDO::FETCH_ASSOC);
@@ -26,8 +26,20 @@ if ($result) {
     
 
         echo "Transaction successful";
-        header('Location: ../main.php');
 
+
+
+        require "refresh.inc.php";
+        
+        
+
+        $temp = $ammount <= $accountBalance;
+        echo  "<hr>" . $accountBalance . "-{$ammount} = {$temp}" . "<hr>"; 
+
+        var_dump($_SESSION);
+
+/*         header("Location: ../main.php");
+ */
 
     }
 
