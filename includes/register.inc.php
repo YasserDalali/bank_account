@@ -4,9 +4,9 @@
 if (isset($_POST['register_btn'])) {
         /* extract form inputs entry. */
 
-    $name = strtolower($_POST['fname']) . " " . strtolower($_POST['fname']);
-    $password = strtolower($_POST['pass']);  
-    $email = strtolower($_POST['mail']);
+    $name = htmlspecialchars(strtolower($_POST['fname']) . " " . strtolower($_POST['fname']));
+    $password = htmlspecialchars(strtolower($_POST['pass']));  
+    $email = htmlspecialchars(strtolower($_POST['mail']));
     
     require "dbh.inc.php";
         /* create a SQL query to append an account instance into the database. */

@@ -11,8 +11,8 @@ require "dbh.inc.php";
 
 
 if (isset($_POST['login-submit'])) { 
-    $usermail = $_POST['userID'];
-    $password = $_POST['userPwd'];
+    $usermail = htmlspecialchars($_POST['userID']);
+    $password = htmlspecialchars($_POST['userPwd']);
 
 
 

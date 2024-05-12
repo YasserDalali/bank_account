@@ -2,8 +2,8 @@
 
 require "dbh.inc.php";
 session_start();
-$accToSend = $_POST['accto'];
-$ammount = $_POST['ammount'];
+$accToSend = htmlspecialchars($_POST['accto']);
+$ammount = htmlspecialchars($_POST['ammount']);
 $accountBalance = 0;
 
 $sql = "SELECT * FROM account WHERE accId='{$accToSend}'";

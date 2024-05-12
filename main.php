@@ -29,7 +29,7 @@ include "templates/header.php"
         <h1>Account Overview</h1>
     </header>
 
-    <?php /* var_dump($_SESSION) */ ?>
+    <?php  /* var_dump($_SESSION) */  ?>
 
 
     <div class="container">
@@ -45,6 +45,38 @@ include "templates/header.php"
                 <th>Description</th>
                 <th>Amount</th>
             </thead>
+
+            <tbody>
+
+            <?php
+                require "includes/dbh.inc.php";
+                $sql = "SELECT * FROM trans WHERE fromacc = '{$_SESSION['uidUsers']}' OR toacc = '{$_SESSION['uidUsers']}' ORDER BY id DESC LIMIT 5";
+                $result = $pdo->query($sql);
+
+                if ($result->rowCount() > 0) {
+                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<tr>';
+                        /* date */
+                        echo '<td>' . $row['timestmp'];
+
+
+                        /* desc */
+                        if ($row['toacc'] == $_SESSION['uidUsers']) 
+                        {echo "<td>{$row['fromacc']} sent \${$row['ammount']}</td>";}
+                    else 
+                        {echo "<td>you sent \${$row['ammount']} to {$row['toacc']} </td>";
+                        }
+                        /* amount */
+
+
+                        echo '<td>' . "$" . $row['ammount'] . '</td>';
+                        echo '</tr>';
+                    }
+                }
+            ?>
+
+
+            </tbody>
             <!-- <tr>
                 <td>2024-05-15</td>
                 <td>Deposit</td>
