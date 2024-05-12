@@ -2,14 +2,8 @@
 require "templates/header.php";
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlabank | Register</title>
-    <link rel="icon" href="https://seeklogo.com/images/E/emblem-of-yamamoto-miyagi-logo-3BB0AAE301-seeklogo.com.png" type="image/png">
-</head>
 
-<body>
+
     <form class="needs-validation" novalidate method="POST" action="includes/register.inc.php">
 
 
@@ -58,6 +52,5 @@ require "templates/header.php";
 
         </div>
         </div>
-        <button class="btn btn-primary" type="submit" name="register_btn">Submit form</button>
+        <button class="btn btn-primary" type="submit" name="register_btn">Register</button>
     </form>
-</body>

@@ -17,7 +17,7 @@ if (isset($_POST['login-submit'])) {
 
 
 // Prepare the SQL query
-$sql = "SELECT accId FROM account WHERE email = :email AND pwd = :password";
+$sql = "SELECT * FROM account WHERE email = :email AND pwd = :password";
 
 // Hash user password
 $stmt = $pdo->prepare($sql);
@@ -27,16 +27,20 @@ $stmt->bindParam(':password', $password);
 
 // Execute the statement
 $stmt->execute();
+$row = $stmt->fetch();
 
 // Check if a row was found
-if ($stmt->rowCount() === 1) {
+if ($row) {
     // Fetch the result
-    $row = $stmt->fetch();
     
     session_start();
 
     // Store the user ID in the session
+    $_SESSION['balance'] = $row['balance'];
+    $_SESSION['email'] = $row['email'];
     $_SESSION['uidUsers'] = $row['accId'];
+
+
     
     
     header("Location: ../main.php");
@@ -54,4 +58,9 @@ else {
  else {
     header("Location: ../index.php");
     exit();
+ }
+
+
+ function refreshLog() {
+
  }

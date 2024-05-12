@@ -29,6 +29,7 @@ if (isset($_SESSION['uidUsers'])) {
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
       </form>
     </nav>';
+
 }
 else {
     echo '<nav class="navbar sticky-top navbar-light bg-light">
