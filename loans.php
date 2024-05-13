@@ -28,15 +28,12 @@
         <h1 class="title-atla">Loans</h1>
     </div>
 </div>
-<div class="container my-4">
 
-    <form action="" method="post">
+
+    <form action="includes/loans.inc.php" method="post" class="container my-4">
 
 
         <div class="form-check">
-
-
-
             <label for="">Loan value:</label>
             <input type="number" class="form-control" min="1000" name="amount" id="" required aria-describedby="helpId" placeholder="$0.00">
 
