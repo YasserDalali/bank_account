@@ -98,6 +98,7 @@ margin: 2rem 0;
         </table>
 
         <a href="transfer.php" class="btn btn-primary">Transfer Money</a>
+        <a href="loans.php" class="btn btn-primary">Request a loan</a>
 
     </div>
 
