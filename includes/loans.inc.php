@@ -6,7 +6,7 @@ session_start();
 $ammount = intval(htmlspecialchars($_POST['amount']));
 $period = intval(htmlspecialchars($_POST['period']));
 
-if (!empty($ammount) && !empty($period) && $ammount > 1000 )
+if (!empty($ammount) && !empty($period) && $ammount >= 1000 )
 {
 $profit = 0;
 if ($period <= 30) {$profit = 2;}
@@ -62,6 +62,9 @@ else {
     echo "negative balance";
 }
 
+}
+else {
+    echo "either empty inputs | ammount bellow 1000";
 }
 
 function checkCreditScore($result) {
