@@ -1,6 +1,7 @@
 <?php 
 // DATABASE CONNECTION AND SECURING:
 require "includes/config_session.inc.php";
+
 ?>
 <!-- EXTERNAL STYLE LINKS: -->
 
@@ -21,6 +22,7 @@ require "includes/config_session.inc.php";
 <?php 
 if (isset($_SESSION['uidUsers'])) {
     echo '<nav class="navbar sticky-top navbar-light bg-light">
+
     <a class="navbar-brand" href="#">
         <img src="https://seeklogo.com/images/E/emblem-of-yamamoto-miyagi-logo-3BB0AAE301-seeklogo.com.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Atlabank
@@ -56,6 +58,7 @@ else {
     </nav>'; 
 }
 ?>
+
 
 
 

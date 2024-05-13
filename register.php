@@ -54,3 +54,4 @@ require "templates/header.php";
         </div>
         <button class="btn btn-primary" type="submit" name="register_btn">Register</button>
     </form>
+    <?php include "templates/footer.php" ?>

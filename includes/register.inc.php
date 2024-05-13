@@ -19,6 +19,8 @@ if (isset($_POST['register_btn'])) {
     $stmt->execute();
 
     header('Location: ../index.php');
+    $pdo = $stmt = null;
+
 
 }
 

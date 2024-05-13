@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php
+
 require "templates/header.php";
 
 if (isset($_SESSION['uidUser'])) {
@@ -11,6 +12,8 @@ if (isset($_SESSION['uidUser'])) {
 else {
     require('landing.php');
 }
+
+include "templates/footer.php";
 ?>
 
 </html>

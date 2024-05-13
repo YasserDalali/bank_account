@@ -11,3 +11,5 @@
         <button class="btn-primary btn my-4" type="submit">Transfer</button>
     </form>
 </div>
+
+<?php include "templates/footer.php" ?>

@@ -11,19 +11,21 @@ require "dbh.inc.php";
 
 
 if (isset($_POST['login-submit'])) { 
+
     $usermail = htmlspecialchars($_POST['userID']);
     $password = htmlspecialchars($_POST['userPwd']);
 
+    if (!empty($usermail) AND !empty($password))
 
-
+{
 // Prepare the SQL query
-$sql = "SELECT * FROM account WHERE email = :email AND pwd = :password";
+$sql = "SELECT * FROM account WHERE email = :reda1   AND pwd = :reda2";
 
 // Hash user password
 $stmt = $pdo->prepare($sql);
 // Bind parameters
-$stmt->bindParam(':email', $usermail);
-$stmt->bindParam(':password', $password);
+$stmt->bindParam(':reda1', $usermail);
+$stmt->bindParam(':reda2', $password);
 
 // Execute the statement
 $stmt->execute();
@@ -54,13 +56,9 @@ else {
 
     
 }
-
+}
  else {
     header("Location: ../index.php");
     exit();
  }
 
-
- function refreshLog() {
-
- }

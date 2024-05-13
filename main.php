@@ -20,6 +20,12 @@ include "templates/header.php"
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
+    .balance-span {
+
+font-size: 4rem;
+margin: 2rem 0;
+}
+
 
 
 </style>
@@ -34,9 +40,10 @@ include "templates/header.php"
 
     <div class="container">
         <h2>Account Information</h2>
+        <span class="balance-span"><p><strong>$<?php echo $_SESSION['balance']; ?></strong></p></span>
+
         <p><strong>Account Number:</strong> <?php echo $_SESSION['uidUsers']; ?></p>
         <p><strong>Account Type:</strong> Savings</p>
-        <p><strong>Balance:</strong> $<?php echo $_SESSION['balance']; ?></p>
 
         <h2>Recent Transactions</h2>
         <table class="table">
@@ -95,4 +102,6 @@ include "templates/header.php"
     </div>
 
 </body>
-</html>
+
+
+<?php include "templates/footer.php" ?>
