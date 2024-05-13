@@ -5,6 +5,9 @@ session_start();
 
 $ammount = intval(htmlspecialchars($_POST['amount']));
 $period = intval(htmlspecialchars($_POST['period']));
+
+if (!empty($ammount) && !empty($period) && $ammount > 1000 )
+{
 $profit = 0;
 if ($period <= 30) {$profit = 2;}
 elseif ($period <= 91) {$profit = 3;}
@@ -16,7 +19,7 @@ require "refresh.inc.php";
 if ($_SESSION['balance'] >= 0) {
 
     $sql = "SELECT * FROM loan WHERE loaner='{$_SESSION['uidUsers']}'";
-    $pdo->query($sql);
+    $result = $pdo->query($sql);
     
     if ($result) {
 
@@ -51,26 +54,20 @@ if ($_SESSION['balance'] >= 0) {
         $pdo->query($sql);
 
         echo "Loan granted.";
-        deposit($pdo, $ammount, $_SESSION['uidUsers']);
-
-
     }
 
 }
-
-
-
 
 else {
     echo "negative balance";
 }
 
-
+}
 
 function checkCreditScore($result) {
     $loans = $result->fetchAll(PDO::FETCH_ASSOC); // Use fetchAll instead of fetch to get all rows
     foreach ($loans as $sloan) {
-        if ($sloan['paid'] == false) { // Use array syntax to access column values
+        if ($sloan['paid'] == 0) { // Use array syntax to access column values
             return false;
         }
     }

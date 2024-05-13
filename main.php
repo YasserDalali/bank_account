@@ -64,14 +64,13 @@ margin: 2rem 0;
                     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                         echo '<tr>';
                         /* date */
-                        echo '<td>' . $row['timestmp'];
-
-
+                        echo '<td>' . date("Y-m-d H:i", strtotime($row['timestmp']));
+                        
                         /* desc */
                         if ($row['toacc'] == $_SESSION['uidUsers']) 
-                        {echo "<td>{$row['fromacc']} sent \${$row['ammount']}</td>";}
+                        {echo "<td>{$row['fromacc']} sent <b>\${$row['ammount']}</b></td>";}
                     else 
-                        {echo "<td>you sent \${$row['ammount']} to {$row['toacc']} </td>";
+                        {echo "<td>you sent <b>\${$row['ammount']}</b> to {$row['toacc']} </td>";
                         }
                         /* amount */
 
