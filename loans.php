@@ -41,14 +41,14 @@
 
             <div class="form-check mb-4">
                 
-                    <input type="radio" class="form-check-input" name="c1" id="" value="checkedValue" checked>
-                    60 Days (1 Month)
+                    <input type="radio" class="form-check-input" name="period" id="" value="30" checked>
+                    30 Days (by month)
                     <br>
-                    <input type="radio" class="form-check-input" name="c1" id="" value="checkedValue">
-                    91 Days (trimester)
+                    <input type="radio" class="form-check-input" name="period" id="" value="91">
+                    91 Days (by trimester)
                     <br>
-                    <input type="radio" class="form-check-input" name="c1" id="" value="checkedValue">
-                    356 Days (12 Month)
+                    <input type="radio" class="form-check-input" name="period" id="" value="365">
+                    365 Days (by year)
             </div>
 
 
