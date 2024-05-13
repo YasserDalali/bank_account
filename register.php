@@ -1,6 +1,5 @@
 <?php
 require "templates/header.php";
-if (isset($_SESSION['uidUser'])) header('Location: index.php');
 ?>
 
 
